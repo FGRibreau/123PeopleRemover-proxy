@@ -6,6 +6,7 @@ En effet, seul le processus de récupération de la page sur 123People est bloqu
 J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finaux de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
 
 ## Installation ##
+Pré-requis: PHP5+
 
 ### Utilisateurs débutants ###
 * Télécharger le projet (clic sur bouton plus haut dans la page) sur votre ordinateur
