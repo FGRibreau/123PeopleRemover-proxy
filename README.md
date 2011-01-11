@@ -3,7 +3,7 @@
 123People ayant bloqué l'adresse IP de mon serveur, je propose à la communauté de participer au projet. 
 
 En effet, seul le processus de récupération de la page sur 123People est bloqué. En changeant de serveur, 123People aurait juste eu besoin de bloquer la nouvelle IP. 
-J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finals de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
+J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finaux de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
 
 ## Installation ##
 
