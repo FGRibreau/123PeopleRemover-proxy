@@ -13,8 +13,11 @@ J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de
 * (temporaire) Envoyer un mail à 123PeopleRemover[_at_]fgribreau.com avec les urls où se trouve le script
 
 ### Utilisateurs confirmés ###
+
 * Cloner git sur un ou plusieurs de vos serveurs
 * (temporaire) Envoyer un mail à 123PeopleRemover[_at_]fgribreau.com avec les urls où se trouve le script
+
+PS: Pour informations si vous souhaitez envoyer le script sur plusieurs serveurs en .free.fr vérifiez qu'ils diffèrent de par leurs IP.
 
 ### Tester le script (état par défaut) ###
 
