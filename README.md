@@ -7,6 +7,7 @@ J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de
 
 ## Installation ##
 Pré-requis: PHP5 >= 5.2.0 (à cause de json_encode)
+Les serveurs .free.fr ne sont pas compatibles.
 
 ### Utilisateurs débutants ###
 * Télécharger le projet (clic sur bouton plus haut dans la page) sur votre ordinateur
@@ -20,7 +21,7 @@ Pré-requis: PHP5 >= 5.2.0 (à cause de json_encode)
 * Tester le script (explication ci-dessous)
 * (temporaire) Envoyer un mail à 123PeopleRemover[_at_]fgribreau.com avec les urls où se trouve le script
 
-PS: Si vous souhaitez envoyer le script sur plusieurs serveurs en .free.fr vérifiez qu'ils diffèrent de par leurs IP.
+PS: Si vous souhaitez envoyer le script sur plusieurs serveurs vérifiez qu'ils diffèrent de par leurs IP.
 
 ### (Etape 1) Tester le script (état par défaut) ###
 
