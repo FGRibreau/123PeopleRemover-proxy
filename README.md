@@ -25,6 +25,15 @@ Une fois installé sur votre serveur, allez à l'adresse __http://votreServeur.c
 Le script devrait afficher:
 	defaultCallback({"version":1,"content":{"errId":0,"errMsg":"No parameter \"callback\" specified"}});
 
+### Tester le script (partie 2) ###
+
+Ajoutez à l'adresse
+	?callback=cb&url=http%3A%2F%2Fwww.123people.fr%2Fs%2Ffrancois-guillaume%2Bribreau
+
+Le script devrait afficher du texte (json) commençant par:
+	cb({"version":1,"content":{"links":[
+
+
 ## Considérations techniques ##
 
 D'avance désolé pour la qualité du code, j'ai juste eu le temps de le re-factoriser en vitesse. 
