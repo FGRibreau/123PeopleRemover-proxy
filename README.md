@@ -31,8 +31,8 @@ Le script devrait afficher:
 
 ### (Etape 2) Tester le script - récupération d'une page 123People ###
 
-Ajoutez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__ le texte suivant:
-	?callback=cb&url=http%3A%2F%2Fwww.123people.fr%2Fs%2Ffrancois-guillaume%2Bribreau
+Ajoutez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__ le texte suivant (remplacez [url_123PEOPLE] par l'url d'une page 123People que <a href="http://www.albionresearch.com/misc/urlencode.php">vous aurez préalablement encodée</a>):
+	?callback=cb&url=[url_123PEOPLE]
 
 Le script devrait afficher du texte (json) commençant par:
 	cb({"version":1,"content":{"links":[
