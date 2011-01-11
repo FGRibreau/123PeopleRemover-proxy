@@ -27,7 +27,7 @@ Le script devrait afficher:
 
 ### Tester le script (partie 2) ###
 
-Ajoutez à l'adresse
+Ajoutez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__ le texte suivant:
 	?callback=cb&url=http%3A%2F%2Fwww.123people.fr%2Fs%2Ffrancois-guillaume%2Bribreau
 
 Le script devrait afficher du texte (json) commençant par:
