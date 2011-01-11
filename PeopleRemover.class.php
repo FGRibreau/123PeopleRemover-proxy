@@ -107,7 +107,7 @@ class PeopleRemover{
 		}
 		
 		//Quick & dirty -__-'
-		$links = array_values(array_unique(array_filter($links[0], 'isBadLink'), SORT_STRING));
+		$links = array_values(array_unique( array_filter($links[0], 'isBadLink')));
 
 		if(count($links) == 0){
 			echo printOutError(5, 'There are no links :s');

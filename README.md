@@ -6,7 +6,7 @@ En effet, seul le processus de récupération de la page sur 123People est bloqu
 J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finaux de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
 
 ## Installation ##
-Pré-requis: PHP5+
+Pré-requis: PHP5 >= 5.2.0 (à cause de json_encode)
 
 ### Utilisateurs débutants ###
 * Télécharger le projet (clic sur bouton plus haut dans la page) sur votre ordinateur
@@ -36,6 +36,7 @@ Ajoutez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__ le tex
 Le script devrait afficher du texte (json) commençant par:
 	cb({"version":1,"content":{"links":[
 
+Dans le cas contraire, il est fort probable que la version de PHP soit trop ancienne pour exécuter le script.
 
 ## Considérations techniques ##
 
