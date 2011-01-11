@@ -43,7 +43,7 @@ class TinyHttpClient
         $request = "GET $filename HTTP/1.0\r\n" .
         "Host: $host\r\n" .
         $authorization . 
-        'User-Agent: '.TinyHttpClient::$USERAGENTS[rand(0, count(TinyHttpClient::$USERAGENTS)-1)]."\r\n" .
+        'User-Agent: '.$this->USERAGENTS[rand(0, count($this->USERAGENTS)-1)]."\r\n" .
         "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"."\r\n".
 		"Accept-Language: fr,fr-fr;q=0.8,en-us;q=0.5,en;q=0.3"."\r\n".
 		"Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7"."\r\n".
@@ -172,7 +172,7 @@ class TinyHttpClient
         }
     }
 
-	private static $USERAGENTS = array(		'Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3'
+	var $USERAGENTS = array(		'Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3'
 										,	'Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)'
 										,	'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)'
 										,	'Mozilla/5.0 (Windows; U; Windows NT 6.0; fr; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)'

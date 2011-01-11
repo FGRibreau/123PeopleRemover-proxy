@@ -9,18 +9,20 @@
  *
  */
 class PeopleRemover{
-	public static $VERSION = 1;
-	public static $PROD = TRUE;
-	public static $SERVER123PEOPLE = 'www.123people.fr';
 	
-	private $url, $callback, $httpClient, $htmlSource;
+	private $url, $callback, $httpClient, $htmlSource
+			, $VERSION, $PROD, $SERVER123PEOPLE;
 	
 	function __construct($http_get_url = null, $http_get_callback){
+		//Old static var
+		$this->VERSION = 1;
+		$this->PROD = true;
+		$this->SERVER123PEOPLE = 'www.123people.fr';
+		
 		$this->url = $http_get_url;
 		$this->callback = $http_get_callback;
 		$httpClient = null;
 		$htmlSource = null;
-		
 	}
 	
 	public function run(){
@@ -63,8 +65,8 @@ class PeopleRemover{
 	 * Récupère le code html de la page
 	 **/
 	public function httpClientGet(){
-		if(PeopleRemover::$PROD){
-			$this->htmlSource = $this->httpClient->getRemoteFile(PeopleRemover::$SERVER123PEOPLE, 80, $this->getRequestUrl(), '', 4096, 'get');
+		if($this->PROD){
+			$this->htmlSource = $this->httpClient->getRemoteFile($this->SERVER123PEOPLE, 80, $this->getRequestUrl(), '', 4096, 'get');
 		} else {
 			$this->htmlSource = file_get_contents('tmp.html');
 		}
@@ -122,7 +124,7 @@ class PeopleRemover{
 	 */
 	private function printOut($obj){
 		header('Content-type:application/json');
-		return $this->callback.'('.json_encode(array('version' => PeopleRemover::$VERSION, 'content' => $obj)).');';
+		return $this->callback.'('.json_encode(array('version' => $this->VERSION, 'content' => $obj)).');';
 	}
 	
 	/**
