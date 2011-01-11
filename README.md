@@ -8,7 +8,7 @@ J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de
 ## Installation ##
 
 ### Utilisateurs débutants ###
-* <a href="https://github.com/FGRibreau/123PeopleRemover-server/archives/master">Télécharger le projet</a> sur votre ordinateur
+* Télécharger le projet (clic sur bouton plus haut dans la page) sur votre ordinateur
 * Décompresser puis envoyer le dossier (peut-importe son nom) sur un ou plusieurs de vos serveurs (via ftp ou autre)
 * (temporaire) Envoyer un mail à 123PeopleRemover[_at_]fgribreau.com avec les urls où se trouve le script
 
