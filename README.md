@@ -16,6 +16,11 @@ J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de
 * Cloner git sur un ou plusieurs de vos serveurs
 * (temporaire) Envoyer un mail à 123PeopleRemover[_at_]fgribreau.com avec les urls où se trouve le script
 
+### Tester le script (état par défaut) ###
+
+Une fois installé sur votre serveur allez à l'adresse _http://votreServeur.com/dossier123PeopleRemover/__
+Le script devrait retourner:
+	defaultCallback({"version":1,"content":{"errId":0,"errMsg":"No parameter \"callback\" specified"}});
 
 ## Considérations techniques ##
 
