@@ -6,7 +6,7 @@ En effet, seul le processus de récupération de la page sur 123People est bloqu
 J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finaux de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
 
 ## Installation ##
-Pré-requis: PHP5 >= 5.2.0 (à cause de json_encode)
+Pré-requis: PHP5 >= 5.2.0 (dû à json_encode)
 Les serveurs .free.fr ne sont pas compatibles.
 
 ### Utilisateurs débutants ###
@@ -27,7 +27,7 @@ PS: Si vous souhaitez envoyer le script sur plusieurs serveurs vérifiez qu'ils 
 
 Une fois installé sur votre serveur, allez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__
 Le script devrait afficher:
-	defaultCallback({"version":1,"content":{"errId":0,"errMsg":"No parameter \"callback\" specified"}});
+	defaultCallback({"version":2,"content":{"errId":0,"errMsg":"No parameter \"callback\" specified"}});
 
 ### (Etape 2) Tester le script - récupération d'une page 123People ###
 
@@ -35,11 +35,6 @@ Ajoutez à l'adresse __http://votreServeur.com/dossier123PeopleRemover/__ le tex
 	?callback=cb&url=[url_123PEOPLE]
 
 Le script devrait afficher du texte (json) commençant par:
-	cb({"version":1,"content":{"links":[
+	cb({"version":2,"content":{"links":[
 
 Dans le cas contraire, il est fort probable que la version de PHP soit trop ancienne pour exécuter le script.
-
-## Considérations techniques ##
-
-D'avance désolé pour la qualité du code, j'ai juste eu le temps de le re-factoriser en vitesse. 
-N'hésitez pas à forker le projet !

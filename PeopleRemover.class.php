@@ -10,14 +10,19 @@
  */
 class PeopleRemover{
 	
-	private $url, $callback, $httpClient, $htmlSource
-			, $VERSION, $PROD, $SERVER123PEOPLE;
+	private $url
+			, $callback
+			, $httpClient // [HttpClient]
+			, $htmlSource
+			, $VERSION
+			, $PROD
+			, $SERVER123PEOPLE;
 	
 	function __construct($http_get_url = null, $http_get_callback){
 		//Old static var
-		$this->VERSION = 1;
+		$this->VERSION = 2;
 		$this->PROD = true;
-		$this->SERVER123PEOPLE = 'www.123people.fr';
+		$this->SERVER123PEOPLE = 'www.123people.';//[fr | us | de | it | br | etc...]
 		
 		$this->url = $http_get_url;
 		$this->callback = $http_get_callback;
@@ -42,7 +47,7 @@ class PeopleRemover{
 			echo $this->printOutError(2, 'Bad url value');
 			return;
 		}
-		
+
 		return $this->httpClientInit() && $this->httpClientGet() && $this->httpClientParse();
 	}
 	
@@ -54,9 +59,15 @@ class PeopleRemover{
 		return strpos($this->url, 'http://www.123people.') == 0 && strpos($this->url, '/s/') != false;
 	}
 	
+	public function getTLD(){
+		$p = strlen('http://www.123people.');
+		return substr($this->url, $p, strpos($this->url, '/', $p)-$p);
+	}
+	
+	
 	public function httpClientInit(){
-		$this->httpClient = new TinyHttpClient();  
-	    $this->httpClient->debug = false;
+		$this->httpClient = new HttpClient($this->SERVER123PEOPLE.$this->getTLD());
+		$this->httpClient->setDebug(!$this->PROD);
 		return true;
 	}
 	
@@ -66,7 +77,11 @@ class PeopleRemover{
 	 **/
 	public function httpClientGet(){
 		if($this->PROD){
-			$this->htmlSource = $this->httpClient->getRemoteFile($this->SERVER123PEOPLE, 80, $this->getRequestUrl(), '', 4096, 'get');
+			if (!$this->httpClient->get($this->getRequestUrl())) {
+			    die('An error occurred: '.$this->httpClient->getError());
+			}
+			
+			$this->htmlSource = $this->httpClient->getContent();
 		} else {
 			$this->htmlSource = file_get_contents('tmp.html');
 		}
@@ -80,7 +95,8 @@ class PeopleRemover{
 	}
 	
 	public function getRequestUrl(){
-		return '/s'.substr($this->url, strripos($this->url,'/'));
+		$url = parse_url($this->url);
+		return $url['path'];
 	}
 	
 	/**
@@ -102,15 +118,20 @@ class PeopleRemover{
 			&& stripos($v, 'commander.1and1.fr') === FALSE
 			&& stripos($v, 'w3.org/TR') === FALSE
 			&& stripos($v, 'yahooapis.com') === FALSE
-			&& stripos($v, 'w3.org/1999') === FALSE 
+			&& stripos($v, 'w3.org/1999') === FALSE
+			&& stripos($v, 'intelius.com') === FALSE // World-US
+			&& stripos($v, 'united-domains.de') === FALSE // Austria
+			&& stripos($v, 'amazon.de/dp/') === FALSE // De
 			&& substr_count($v,'.') >= 2;
 		}
-		
+
 		//Quick & dirty -__-'
 		$links = array_values(array_unique( array_filter($links[0], 'isBadLink')));
 
 		if(count($links) == 0){
-			echo printOutError(5, 'There are no links :s');
+			echo $this->printOutError(5, 'There are no links :s');
+			
+			echo '<textarea>'.$this->htmlSource.'</textarea>';
 			return false;
 		}
 		

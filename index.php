@@ -9,7 +9,7 @@
  */
 
 include dirname(__FILE__).'/PeopleRemover.class.php';
-include dirname(__FILE__).'/lib/TinyHttpClient.php';
+include dirname(__FILE__).'/lib/HttpClient.class.php';
 
 $server = new PeopleRemover($_GET['url'], $_GET['callback']);
 $server->run();
