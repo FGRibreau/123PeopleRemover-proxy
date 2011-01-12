@@ -144,7 +144,7 @@ class PeopleRemover{
 	 * Retourne un JSONP
 	 */
 	private function printOut($obj){
-		header('Content-type:application/json');
+		header('Content-type: application/json');
 		return $this->callback.'('.json_encode(array('version' => $this->VERSION, 'content' => $obj)).');';
 	}
 	

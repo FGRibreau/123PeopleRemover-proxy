@@ -6,8 +6,14 @@ En effet, seul le processus de récupération de la page sur 123People est bloqu
 J'ai donc choisi la solution des "proxy" pour contrer ce problème. Ceci afin de permettre aux utilisateurs finaux de pouvoir utiliser le service sans ce soucier d'aucune considération technique. 
 
 ## Installation ##
-Pré-requis: PHP5 >= 5.2.0 (dû à json_encode)
-Les serveurs .free.fr ne sont pas compatibles.
+
+### A savoir avant d'installer 123People proxy ###
+* Pré-requis: PHP5 >= 5.2.0 (dû à json_encode)
+* L'adresse de votre serveur ne sera jamais connue de l'extérieur (service 123PeopleRemover <-> proxy 123PeopleRemover <-> votre proxy 123PeopleRemover <-> 123People)
+* L'utilisation en bande passante/UC est minime: Système de proxy rotatif pour chaque requête, donc: 
+	Plus de proxy = Moins de requête par serveur
+* Chaque proxy est testé toutes les heures (pas de requête vers 123People) pour vérifier sa présence
+* Les serveurs .free.fr ne sont pas compatibles pour héberger 123PeopleRemover proxy
 
 ### Utilisateurs débutants ###
 * Télécharger le projet (clic sur bouton plus haut dans la page) sur votre ordinateur
