@@ -44,3 +44,6 @@ Le script devrait afficher du texte (json) commençant par:
 	cb({"version":2,"content":{"links":[
 
 Dans le cas contraire, il est fort probable que la version de PHP soit trop ancienne pour exécuter le script.
+
+## Donate
+[Donate Bitcoins](https://coinbase.com/checkouts/fc3041b9d8116e0b98e7d243c4727a30)
