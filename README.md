@@ -1,4 +1,4 @@
-# 123PeopleRemover proxy #
+# 123PeopleRemover proxy [![Gittip](http://badgr.co/gittip/fgribreau.png)](https://www.gittip.com/fgribreau/)
 
 123People ayant bloqué l'adresse IP de mon serveur, je propose à la communauté de participer au projet. 
 
